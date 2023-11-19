@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Engel Burgers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Elementos/logo-engel-burger.svg">
+</head>
+
+<body>
+
+    <!-- Contenedor del logo -->
+    <div id="logo-container">
+        <img id="logo" src="Elementos/logo-engel-burger.svg" alt="Logo de la empresa">
+    </div>
+
+    <!-- Encabezado -->
+    <h1>Pedidos online</h1>
+
+    <!-- Lista de productos -->
+    <div class="productos animate-jump">
+        <!-- Producto 1: Cheese Burger -->
+        <div class="producto" data-id="1">
+            <img src="Elementos/cheese.png" alt="Cheese Burger">
+            <span class="ingredientes-mensaje">Pan, Salsa Engel, Cheddar, 130 gramos de carne de vacío</span>
+            <span>Cheese Burger</span>
+            <span>Gs. 15.000</span>
+            <!-- Contenedor personalizado con flechas -->
+            <div class="number-input-container">
+                <button class="arrow" onclick="decrementarCantidad(1)">-</button>
+                <input type="number" id="cantidadProducto1" min="1" value="1" class="form-control" />
+                <button class="arrow" onclick="incrementarCantidad(1)">+</button>
+            </div>
+            <button class="btn btn-primary agregar" data-id="1">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 2: Bacon BBQ -->
+        <div class="producto" data-id="2">
+            <img src="Elementos/Bacon.png" alt="Bacon BBQ">
+            <span class="ingredientes-mensaje">Pan, Salsa BBQ, Bacon, Cheddar, 130 gramos de carne de vacío</span>
+            <span>Bacon BBQ</span>
+            <span>Gs. 17.000</span>
+            <div class="number-input-container">
+                <button class="arrow" onclick="decrementarCantidad(2)">-</button>
+                <input type="number" id="cantidadProducto2" min="1" value="1" class="form-control" />
+                <button class="arrow" onclick="incrementarCantidad(2)">+</button>
+            </div>
+            <button class="btn btn-primary agregar" data-id="2">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 3: Engel Burger -->
+        <div class="producto" data-id="3">
+            <img src="Elementos/Engel.png" alt="Engel Burger">
+            <span class="ingredientes-mensaje">Salsa Engel, Cebolla Morada, Pepinillos, Cheddar, 130 gramos de carne de vacío, Salsa Engel</span>
+            <span>Engel Burger</span>
+            <span>Gs. 19.000</span>
+            <div class="number-input-container">
+                <button class="arrow" onclick="decrementarCantidad(3)">-</button>
+                <input type="number" id="cantidadProducto3" min="1" value="1" class="form-control" />
+                <button class="arrow" onclick="incrementarCantidad(3)">+</button>
+            </div>
+            <button class="btn btn-primary agregar" data-id="3">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 4: Papas Pequeñas -->
+        <div class="producto" data-id="4">
+            <img src="Elementos/Papas.png" alt="Papas Pequeñas">
+            <span>Papas Pequeñas</span>
+            <span>Gs. 5.000</span>
+            <div class="number-input-container">
+                <button class="arrow" onclick="decrementarCantidad(4)">-</button>
+                <input type="number" id="cantidadProducto4" min="1" value="1" class="form-control" />
+                <button class="arrow" onclick="incrementarCantidad(4)">+</button>
+            </div>
+            <button class="btn btn-primary agregar" data-id="4">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 5: Coca Cola de 400ml -->
+        <div class="producto" data-id="5">
+            <img src="Elementos/Coca Cola.png" alt="Coca Cola de 400ml">
+            <span>Coca-Cola de 400ml</span>
+            <span>Gs. 5.000</span>
+            <div class="number-input-container">
+                <button class="arrow" onclick="decrementarCantidad(5)">-</button>
+                <input type="number" id="cantidadProducto5" min="1" value="1" class="form-control" />
+                <button class="arrow" onclick="incrementarCantidad(5)">+</button>
+            </div>
+            <button class="btn btn-primary agregar" data-id="5">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito de compras -->
+    <div class="carrito">
+        <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart" width="24" height="24">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h8.72a2 2 0 0 0 2-1.61L19 6H4"></path>
+            </svg> Carrito</h2>
+
+        <ul id="lista-carrito">
+            <!-- Los productos seleccionados se mostrarán aquí -->
+        </ul>
+
+        <div class="acciones-carrito">
+            <button id="limpiar-carrito" class="btn btn-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2" width="15" height="15">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M16 10a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4M4 10v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8"></path>
+                </svg> Limpiar Lista
+            </button>
+            <button id="quiero-delivery" class="btn btn-info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin" width="15" height="15">
+                    <path d="M12 22s-8-4.5-8-11a8 8 0 0 1 16 0c0 6.5-8 11-8 11z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg> Quiero Delivery
+            </button>
+            <button id="finalizar-pedido" class="btn btn-success">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle" width="15" height="15">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg> Finalizar Pedido
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+
+</html>

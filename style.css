@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+body {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin-bottom: 20rem;
+    transition: background-color 0.5s ease, margin-bottom 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #e61e23;
+    margin-bottom: 20px;
+    margin-top: 0;
+    transition: color 0.5s ease;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.10em;
+    margin-block-end: 0.15em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: -4px;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-radius: 20px;
+    transition: backdrop-filter 0.5s ease;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.5s ease, transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+.producto:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    transition: border-radius 0.5s ease;
+}
+
+.producto span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+.number-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0.8rem;
+    transition: margin-top 0.5s ease;
+}
+
+input[type="number"] {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    -moz-appearance: textfield;
+    transition: width 0.5s ease;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-input-container .arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #e61e23;
+    color: #fff;
+    border: none;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.number-input-container .arrow:hover {
+    background-color: #333;
+}
+
+.agregar {
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color: #e61e23;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.agregar:hover {
+    background-color: #333;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    transition: padding 0.5s ease;
+}
+
+#lista-carrito li {
+    margin-bottom: 10px;
+    animation: slideIn 0.5s ease;
+    transition: margin-bottom 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.acciones-carrito {
+    margin-top: 10px;
+    transition: margin-top 0.5s ease;
+}
+
+#finalizar-pedido,
+#limpiar-carrito,
+#quiero-delivery {
+    margin-top: 2px;
+    border-radius: 20px;
+    background-color: #25d366;
+    color: #0c0c0c;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#finalizar-pedido:hover,
+#quiero-delivery:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#limpiar-carrito {
+    margin-top: 2px;
+    border-radius: 20px;
+    background-color: #e61e23;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#limpiar-carrito:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.producto .ingredientes-mensaje {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s ease;
+}
+
+.producto:hover .ingredientes-mensaje {
+    opacity: 1;
+    visibility: visible;
+    max-height: 100px; /* Ajusta la altura máxima según tus preferencias */
+}
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        text-align: center;
+        color: #e61e23;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .producto {
+        width: calc(90% - 20px);
+    }
+
+    .carrito {
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px;
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        width: 100%;
+        transition: transform 0.5s ease, background-color 0.5s ease;
+    }
+
+    .carrito h2 {
+        font-size: 18px;
+    }
+
+    #lista-carrito {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .acciones-carrito {
+        margin-top: -17px;
+        transition: margin-top 0.5s ease;
+    }
+
+    .acciones-carrito button {
+        margin: 5px;
+        font-size: 12px;
+        transform-origin: center;
+        transition: transform 0.5s ease;
+    }
+
+    .acciones-carrito button:hover {
+        transform: scale(1.1);
+    }
+}
